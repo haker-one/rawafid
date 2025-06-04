@@ -44,5 +44,7 @@ jobs:
         publish_dir: ./dist
         # Add these options for better deployment handling
         force_orphan: true
+        enable_jekyll: false
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
+        full_commit_message: 'Deploy to GitHub Pages: ${{ github.sha }}'
