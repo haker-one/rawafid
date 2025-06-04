@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path and redirect to index.html with the path as a query parameter
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // Remove the base path if it exists
+      const base = '/rawafid';
+      let newPath = path;
+      
+      if (path.startsWith(base)) {
+        newPath = path.substring(base.length);
+      }
+      
+      // Redirect to index.html with the path
+      window.location.href = `${base}/index.html#${newPath}${search}${hash}`;
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the home page...</p>
+  </body>
+</html>
