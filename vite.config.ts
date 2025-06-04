@@ -4,7 +4,15 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  base: "/rawafid/",
+  base: "/", // Base path for production
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+    fs: {
+      strict: true,
+      deny: ["**/.*"],
+    },
+  },
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -29,11 +37,5 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
-  },
-  server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
   },
 });
