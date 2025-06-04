@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 48 12% 97%; /* #F8F6F0 */
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 48 12% 97%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 89 50% 23%; /* #2D5016 Islamic Green */
+  --primary-foreground: 48 12% 97%;
+  --secondary: 213 50% 23%; /* #1B365D Ocean Blue */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 44 34% 58%; /* #C9A961 Golden */
+  --accent-foreground: 20 14.3% 4.1%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 89 50% 23%;
+  --radius: 0.5rem;
+  
+  /* Custom Islamic Colors */
+  --islamic-green: 89 50% 23%; /* #2D5016 */
+  --ocean-blue: 213 50% 23%; /* #1B365D */
+  --golden: 44 34% 58%; /* #C9A961 */
+  --fresh-green: 92 39% 58%; /* #7FB069 */
+  --warm-orange: 22 77% 52%; /* #E67E22 */
+  --royal-purple: 283 50% 47%; /* #8E44AD */
+}
+
+.dark {
+  --background: 89 50% 8%;
+  --foreground: 0 0% 98%;
+  --muted: 89 30% 15%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 89 50% 8%;
+  --popover-foreground: 0 0% 98%;
+  --card: 89 40% 12%;
+  --card-foreground: 0 0% 98%;
+  --border: 89 30% 15%;
+  --input: 89 30% 15%;
+  --primary: 89 50% 23%;
+  --primary-foreground: 48 12% 97%;
+  --secondary: 89 30% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 89 30% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 89 50% 35%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-cairo antialiased;
+    direction: rtl;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  .font-amiri {
+    font-family: 'Amiri', serif;
+  }
+
+  .font-cairo {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .font-tajawal {
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .arabic-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .geometric-bg {
+    background-image: radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.1) 2px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .pattern-overlay {
+    background-image: 
+      linear-gradient(45deg, transparent 40%, hsl(var(--golden) / 0.1) 50%, transparent 60%),
+      linear-gradient(-45deg, transparent 40%, hsl(var(--ocean-blue) / 0.1) 50%, transparent 60%);
+    background-size: 20px 20px;
+  }
+
+  .islamic-gradient {
+    background: linear-gradient(135deg, hsl(var(--islamic-green)) 0%, hsl(var(--ocean-blue)) 100%);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+}
+
+@layer components {
+  .text-islamic-green {
+    color: hsl(var(--islamic-green));
+  }
+  
+  .text-ocean-blue {
+    color: hsl(var(--ocean-blue));
+  }
+  
+  .text-golden {
+    color: hsl(var(--golden));
+  }
+  
+  .text-fresh-green {
+    color: hsl(var(--fresh-green));
+  }
+  
+  .bg-islamic-green {
+    background-color: hsl(var(--islamic-green));
+  }
+  
+  .bg-ocean-blue {
+    background-color: hsl(var(--ocean-blue));
+  }
+  
+  .bg-golden {
+    background-color: hsl(var(--golden));
+  }
+  
+  .bg-fresh-green {
+    background-color: hsl(var(--fresh-green));
+  }
+  
+  .border-islamic-green {
+    border-color: hsl(var(--islamic-green));
+  }
+  
+  .border-ocean-blue {
+    border-color: hsl(var(--ocean-blue));
+  }
+  
+  .border-golden {
+    border-color: hsl(var(--golden));
+  }
+}
